@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import Counter from './counter';
 import './App.css';
 
-function App() {
+function App() 
+{
+  let [count, setcount] = useState(0);
+  let [theme, settheme] = useState(true);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`Box ${theme ? 'Night_Time' : 'Day_Time'}`}>
+      <br/>
+      <Counter counterValue={count}/>
+      <button onClick={()=>setcount(++count)}>Click to Count</button>
+      <br/><br/>
+      <button onClick={()=>settheme(!theme)}>Change Background theme</button>
     </div>
   );
 }
