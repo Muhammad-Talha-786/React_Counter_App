@@ -6,9 +6,9 @@ export const TodoList: React.FC<TodoListProps> = ({
   toggleComplete,
 }) => {
   return (
-    <ul style={{ listStyle: "none" }}>
+    <div>
       {todos.map((todo) => (
-        <li>
+        <li key={todo.text}>
           <label className={todo.complete ? "complete" : undefined}>
             <input
               type="checkbox"
@@ -19,6 +19,6 @@ export const TodoList: React.FC<TodoListProps> = ({
           </label>
         </li>
       ))}
-    </ul>
+    </div>
   );
 };

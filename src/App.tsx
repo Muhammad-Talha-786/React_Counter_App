@@ -25,10 +25,10 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="App">
-      <TodoList todos={todos} toggleComplete={toggleComplete} />
+    <>
       <TodoForm addTodo={addTodo} />
-    </div>
+      <TodoList todos={todos} toggleComplete={toggleComplete} />
+    </>
   );
 };
 
